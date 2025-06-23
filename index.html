@@ -15,34 +15,28 @@
       padding: 0;
     }
     .glitch {
-      font-size: 3rem;
+      font-size: 2.5rem;
       position: absolute;
       white-space: nowrap;
-      animation: crazyglitch 0.6s infinite;
+      animation: crazyglitch 1.2s infinite;
       mix-blend-mode: lighten;
     }
     .emoji {
       position: absolute;
-      font-size: 2.5rem;
-      opacity: 0.8;
-      animation: float 10s infinite ease-in-out;
+      font-size: 2rem;
+      opacity: 0.7;
+      animation: float 12s infinite ease-in-out;
     }
     @keyframes crazyglitch {
       0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-      10% { transform: translate(-8px, 6px) rotate(3deg); opacity: 0.8; }
-      20% { transform: translate(6px, -8px) rotate(-2deg); opacity: 0.6; }
-      30% { transform: translate(-5px, 3px) rotate(1deg); opacity: 0.85; }
-      40% { transform: translate(3px, -6px) rotate(-1deg); opacity: 0.7; }
-      50% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-      60% { transform: translate(7px, 5px) rotate(2deg); opacity: 0.8; }
-      70% { transform: translate(-6px, -7px) rotate(-3deg); opacity: 0.6; }
-      80% { transform: translate(5px, 4px) rotate(2deg); opacity: 0.85; }
-      90% { transform: translate(-3px, -5px) rotate(-2deg); opacity: 0.75; }
+      25% { transform: translate(-4px, 4px) rotate(1deg); opacity: 0.8; }
+      50% { transform: translate(4px, -4px) rotate(-1deg); opacity: 0.6; }
+      75% { transform: translate(2px, -2px) rotate(1deg); opacity: 0.8; }
       100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
     }
     @keyframes float {
       0% { transform: translateY(0px); }
-      50% { transform: translateY(-50px); }
+      50% { transform: translateY(-40px); }
       100% { transform: translateY(0px); }
     }
     #playButton {
@@ -79,34 +73,34 @@
       "I LOVE YOU 💖", "YAYA 💋", "I'M OBSESSED WITH YOU 💘", "MADARA I NEED YOU 💞", 
       "YOU'RE MINE 🩷", "LOVE LOVE LOVE 🥀", "NEVER LEAVING YOU 😍", "YAYA~ 💗", 
       "MY ONLY ONE 💓", "DON'T IGNORE ME 💢", "💌 MARRY ME MADARA 💌", "I CAN'T BREATHE WITHOUT YOU 😵‍💫",
-      "FOREVER TOGETHER 🖤", "YAYA YAYA YAYA YAYA YAYA 💖💖💖", "MADARA 💘 MADARA 💘 MADARA 💘",
-      "💕💖💞 OBSESSED 💞💖💕", "CAN’T LIVE WITHOUT YOU 💔", "YANDERE LOVE MODE ACTIVATED 🔪💗"
+      "FOREVER TOGETHER 🖤", "YAYA YAYA 💖💖", "MADARA 💘 MADARA 💘",
+      "💕 OBSESSED 💞", "CAN’T LIVE WITHOUT YOU 💔", "YANDERE MODE 🔪💗"
     ];
 
     const emojis = ["💖", "💘", "💞", "💕", "💓", "💗", "💋", "🥀", "🌹", "🖤", "💌", "🔪"];
     const colors = ["#ff69b4", "#ff1493", "#ffc0cb", "#ff3366", "#ffe6f0"];
 
-    // Create glitching love texts
-    for (let i = 0; i < 500; i++) {
+    // Reduce number of glitch texts
+    for (let i = 0; i < 100; i++) {
       const span = document.createElement('div');
       span.className = 'glitch';
       span.innerText = phrases[Math.floor(Math.random() * phrases.length)];
       span.style.top = Math.random() * 100 + 'vh';
       span.style.left = Math.random() * 100 + 'vw';
       span.style.color = colors[Math.floor(Math.random() * colors.length)];
-      span.style.fontSize = (Math.random() * 3 + 1.5) + 'rem';
-      span.style.animationDuration = (Math.random() * 1 + 0.3) + 's';
+      span.style.fontSize = (Math.random() * 2 + 1.5) + 'rem';
+      span.style.animationDuration = (Math.random() * 1 + 0.8) + 's';
       document.body.appendChild(span);
     }
 
-    // Scatter love emojis
-    for (let i = 0; i < 300; i++) {
+    // Reduce number of emojis
+    for (let i = 0; i < 80; i++) {
       const emoji = document.createElement('div');
       emoji.className = 'emoji';
       emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
       emoji.style.top = Math.random() * 100 + 'vh';
       emoji.style.left = Math.random() * 100 + 'vw';
-      emoji.style.animationDuration = (Math.random() * 10 + 5) + 's';
+      emoji.style.animationDuration = (Math.random() * 10 + 8) + 's';
       document.body.appendChild(emoji);
     }
   </script></body>
