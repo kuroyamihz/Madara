@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yandere Love for Madara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('Madara.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffb6c1;
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .glitch {
+      font-size: 3rem;
+      position: absolute;
+      white-space: nowrap;
+      animation: crazyglitch 0.6s infinite;
+      mix-blend-mode: lighten;
+    }
+    .emoji {
+      position: absolute;
+      font-size: 2.5rem;
+      opacity: 0.8;
+      animation: float 10s infinite ease-in-out;
+    }
+    @keyframes crazyglitch {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      10% { transform: translate(-8px, 6px) rotate(3deg); opacity: 0.8; }
+      20% { transform: translate(6px, -8px) rotate(-2deg); opacity: 0.6; }
+      30% { transform: translate(-5px, 3px) rotate(1deg); opacity: 0.85; }
+      40% { transform: translate(3px, -6px) rotate(-1deg); opacity: 0.7; }
+      50% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      60% { transform: translate(7px, 5px) rotate(2deg); opacity: 0.8; }
+      70% { transform: translate(-6px, -7px) rotate(-3deg); opacity: 0.6; }
+      80% { transform: translate(5px, 4px) rotate(2deg); opacity: 0.85; }
+      90% { transform: translate(-3px, -5px) rotate(-2deg); opacity: 0.75; }
+      100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-50px); }
+      100% { transform: translateY(0px); }
+    }
+    #playButton {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: #ff1493;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <button id="playButton">Enable YAYA Song</button>
+  <audio id="bgm" loop>
+    <source src="Madara.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>  <script>
+    const audio = document.getElementById('bgm');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', () => {
+      audio.play();
+      playButton.style.display = 'none';
+    });
+
+    const phrases = [
+      "I LOVE YOU 💖", "YAYA 💋", "I'M OBSESSED WITH YOU 💘", "MADARA I NEED YOU 💞", 
+      "YOU'RE MINE 🩷", "LOVE LOVE LOVE 🥀", "NEVER LEAVING YOU 😍", "YAYA~ 💗", 
+      "MY ONLY ONE 💓", "DON'T IGNORE ME 💢", "💌 MARRY ME MADARA 💌", "I CAN'T BREATHE WITHOUT YOU 😵‍💫",
+      "FOREVER TOGETHER 🖤", "YAYA YAYA YAYA YAYA YAYA 💖💖💖", "MADARA 💘 MADARA 💘 MADARA 💘",
+      "💕💖💞 OBSESSED 💞💖💕", "CAN’T LIVE WITHOUT YOU 💔", "YANDERE LOVE MODE ACTIVATED 🔪💗"
+    ];
+
+    const emojis = ["💖", "💘", "💞", "💕", "💓", "💗", "💋", "🥀", "🌹", "🖤", "💌", "🔪"];
+    const colors = ["#ff69b4", "#ff1493", "#ffc0cb", "#ff3366", "#ffe6f0"];
+
+    // Create glitching love texts
+    for (let i = 0; i < 500; i++) {
+      const span = document.createElement('div');
+      span.className = 'glitch';
+      span.innerText = phrases[Math.floor(Math.random() * phrases.length)];
+      span.style.top = Math.random() * 100 + 'vh';
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.color = colors[Math.floor(Math.random() * colors.length)];
+      span.style.fontSize = (Math.random() * 3 + 1.5) + 'rem';
+      span.style.animationDuration = (Math.random() * 1 + 0.3) + 's';
+      document.body.appendChild(span);
+    }
+
+    // Scatter love emojis
+    for (let i = 0; i < 300; i++) {
+      const emoji = document.createElement('div');
+      emoji.className = 'emoji';
+      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.top = Math.random() * 100 + 'vh';
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.animationDuration = (Math.random() * 10 + 5) + 's';
+      document.body.appendChild(emoji);
+    }
+  </script></body>
+</html>
